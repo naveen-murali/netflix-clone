@@ -1,0 +1,534 @@
+/* ----------------------------------------------------------------------------------- */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+@font-face {
+    font-family: 'Netflix Sans';
+    font-weight: 400;
+    font-display: optional;
+    src: url('/fonts/NetflixSans_W_Rg.woff2');
+}
+
+body{
+    width: 100vw;
+    min-height: 100vh;
+    font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    overflow-x: hidden;
+    color: #fff;
+    background-color: black;
+}
+a{
+    color: #fff;
+    text-decoration: none;
+}
+button{
+    font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    color: white;
+    border: none;
+    outline: none;
+}
+button:hover{
+    cursor: pointer;
+}
+button:focus{
+    outline: none;
+    border: none;
+}
+.btn{
+    background-color: #e50914;
+}
+.border-bottom{
+    border-bottom: 8px solid #222;
+}
+/* ----------------------------------------------------------------------------------- */
+
+/* for header and navebar and other */
+section{
+    position: relative;
+    width: 100%;
+    height: 43.5rem;
+    overflow: hidden;
+}
+.cover-img-wraper{
+    width: 100%;
+    height: 100%;
+}
+.cover-img-wraper img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.cover-img-gradient{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, #000000d0 0%, #00000054 50%, #000000d0 100%);
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 56px;
+}
+.logo-container{
+    width: 8.375rem;
+    height: 2.25rem;
+    fill: #e50914;
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.lang-label{
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    overflow: hidden;
+}
+.lang-label select{
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    padding: 8px 6px 8px 22px;
+    border: 0.5px solid rgba(255, 255, 255, 0.76);
+    box-shadow: none;
+    border-radius: 2px;
+    background: none;
+    color: #fff;
+}
+.lang-label select option{
+    background-color: gray;
+    border: none;
+    text-align: left;
+}
+.lang-label select:focus{
+    border: 1.5px solid rgba(255, 255, 255, 0.76);
+    outline: #fff;
+}
+.lang-label svg{
+    z-index: 0;
+    height: 18px;
+    position: absolute;
+    left: 2px;
+    top: 50%;
+    transform: translate(0, -50%);
+    fill: #fff;
+}
+.signin{
+    background-color: #e50914;
+    padding: 8px 17px;
+    border-radius: 3px;
+    font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    margin-left: 30px;
+}
+
+.front-content-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+.front-content-container h1{
+    width: 650px;
+    font-size: 50px;
+    padding-top: 8rem;
+    padding-bottom: 0.8rem;
+}
+.front-content-container h3{
+    font-size: 26px;
+    font-weight: 500;
+    padding-bottom: 1.65rem;
+}
+.front-content-container p{
+    font-size: 20px;
+    font-weight: 400;
+    padding-bottom: 1rem;
+}
+
+.search-form{
+    display: flex;
+}
+.email-label{
+    position: relative;
+    width: 450px;
+    height: 60px;
+    background-color: #fff;
+}
+input[type=email]{
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    padding: 10px 10px;
+    font-size: 16px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+}
+input[type=email]:focus{
+    outline: none;
+    border: none;
+}
+.plc-holder{
+    z-index: 0;
+    position: absolute;
+    top: 50%;
+    left: 0.7rem;
+    transform: translate(0, -40%);
+    font-size: 16px;
+    font-weight: 400;
+    color: #8c8c8c;
+    transition: all 0.1s ease-out;
+}
+input[type=email]:focus + .plc-holder{
+    font-size: 12px;
+    font-weight: 600;
+    top: 10%;
+    transform: translate(0, 0);
+}
+.search-form > button{
+    width: 215px;
+    height: 60px;
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    color: #fff;
+}
+.search-form > button:hover{
+    cursor: pointer;
+    background-color: #f50915;
+}
+.search-form svg{
+    fill: #fff;
+    height: 100px;
+    width: 32px;
+}
+
+
+/* information section or feature section */
+.content-info{
+    width: 100%;
+    height: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 0rem 10rem 0;
+}
+.content_reverce{
+    flex-direction: row-reverse;
+    padding: 3rem 0 5rem 0;
+}
+.presentation-container{
+    width: 35rem;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.text-info{
+    width: 35rem;
+}
+.text-info > h1{
+    font-size: 48px;
+    padding-bottom: 1rem;
+}
+.text-info > h4{
+    font-size: 26px;
+    font-weight: 500;
+}
+.presentation{
+    position: relative;
+    display: grid;
+    place-content: center;
+}
+.presentation video{
+    width: 100%;
+}
+.presentation > img{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* private changes for 1st presentation */
+.presnt_1{
+    width: 28rem;
+    padding: 1rem;
+}
+.presnt_1 > img{
+    transform: scale(1.2) translate(-1%, -5%);
+}
+
+/* private changes for 2nd presentation */
+.presnt_2{
+    text-align: left;
+    padding-right: 10rem;
+}
+.presnt_2_img_container{
+    width: fit-content;
+    position: relative;
+}
+.presnt_2 img{
+    width: 32rem;
+}
+.presnt_2_over{
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 64%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    border: 2px solid rgba(255,255,255,.25);
+    border-radius: 0.75rem;
+    background-color: black;
+}
+.presnt_2_over > img{
+    width: 3.2rem;
+}
+.presnt_2_over > div{
+    padding: 1rem 3rem 1rem 1rem;
+}
+.presnt_2_over > div > h5{
+    color: #0071eb;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+/* private changes for third prasantation */
+.presnt_3{
+    width: 20rem;
+}
+.presnt_3 > img{
+    transform: scale(1.5) translate(0, 10%);
+}
+
+/* FAQ section */
+.faq-section{
+    width: 100%;
+    min-height: 50rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+.faq-section > h1{
+    font-size: 50px;
+}
+.faq-section > p{
+    font-size: 18px;
+    padding-bottom: 1rem;
+}
+.faq{
+    width: 100%;
+    padding: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.question, .answer{
+    width: 45rem;
+    height: fit-content;
+    background-color: #303030;
+    font-size: 26px;
+    font-weight: 400;
+    padding: 1rem 1.5rem;
+}
+.question{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1px;
+    transition: all 0.1s ease;
+}
+.answer{
+    overflow: hidden;
+    max-height: 0;
+    padding: 0;
+    transition: max-height 0.2s ease;
+}
+.question:focus + .answer{    
+    max-height: 22rem;
+    padding: 1rem 1.5rem;
+}
+.question:focus + .question  span{    
+    transform: rotateZ(45deg);
+}
+.answer p{
+    padding: 1.2rem 0 1.2rem 0;
+}
+.question span svg{
+    fill: #fff;
+    height: 1.8rem;
+    width: 1.8rem;
+    transform: rotateZ(0deg);
+}
+.question-answer{
+    margin-bottom: 0.5rem;
+}
+
+/* footer */
+footer{
+    color: #757575;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    padding: 4rem 1rem;
+}
+footer p:nth-child(1) > a{
+    color: #757575;
+    padding-bottom: 0.5rem;
+    font-size: 16px;
+}
+footer a:hover{
+    text-decoration: underline;
+}
+footer table{
+    border-spacing: 3rem 2.5em;
+    padding: 1rem;
+}
+footer td > a{
+    color: #757575;
+    text-align: left;
+}
+
+#footer-final{
+    padding: 1rem 0;
+}
+
+
+
+/* media quries */
+@media  (max-width: 1120px) {
+    .content-info{
+        flex-direction: column;
+    }
+        
+    .front-content-container h1{
+        font-size: 26px;
+        width: 100%;
+    }
+
+    .presentation-container, .text-info{
+        width: 30rem;
+    }
+
+    .presentation-container{
+        margin-top: 1rem;
+    }
+
+    footer table{
+        border-spacing: 1rem 1em;
+        padding-bottom: 1rem;
+    }
+}
+/* media quries */
+@media  (max-width: 720px) {
+    header{
+        padding: 14px 28px;
+    }
+ 
+    .front-content-container h3{
+        font-size: 18px;
+    }
+
+    .front-content-container p{
+        font-size: 1rem;
+    }
+
+    .presentation-container, .text-info{
+        width: 20rem;
+    }
+
+    .email-label{
+        width: 220px;
+        height: 40px;
+    }
+
+    .search-form > button{
+        width: 102px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .search-form svg{
+        width: 16px;
+        height: auto;
+    }
+
+    .presentation-container{
+        margin-top: 1rem;
+    }
+
+    .text-info > h1{
+        font-size: 26px;
+    }
+
+    .text-info > h4{
+        font-size: 16px;
+    }
+
+    .faq-section > h1{
+        font-size: 26px;
+    }
+
+    .faq-section > p{
+        text-align: center;
+        font-size: 14px;
+    }
+    .question, .answer{
+        width: 22rem;
+        font-size: 20px;
+    }
+    .presnt_1{
+        width: 17em;
+    }
+    .presnt_2  img{
+        width: 25rem;
+    }
+    .presnt_2_over{
+        width: 70%;
+    }
+    .presnt_2_over > img{
+        width: 2rem;
+    }
+    .presnt_3{
+        width: 15rem;
+    }
+}
+/* media quries */
+@media  (max-width: 300px) {
+
+    .presentation-container, .text-info{
+        width: 15rem;
+    }
+
+    .presentation-container{
+        margin-top: 1rem;
+    }
+
+}
